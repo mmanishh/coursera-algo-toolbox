@@ -1,0 +1,19 @@
+# python3
+def MaxPairwiseProductFast(A):
+	n = len(A)
+	index = 1
+	for i in range(2,n):
+		if A[i]>A[index]:
+			index = i
+
+	index_ = 1
+
+	for i in range(2,n):
+		if A[i]!=A[index] and A[i]>A[index_]:
+			index_ = i
+
+	return A[index]*A[index_]
+
+if __name__ == '__main__':
+	a = [1,2,3]
+	print(MaxPairwiseProductFast(a))
